@@ -1,0 +1,22 @@
+.table-card{
+    background-color: white;
+    box-shadow: 0 0 2px rgb(199, 197, 197);
+    border-radius: var(--table-border-radius);
+    height: fit-content;
+    max-width: fit-content;
+    min-width: 100%;
+    overflow-x: auto;
+    
+    
+    .table-heading{
+        padding: var(--table-padding);
+        border-bottom: 1px solid var(--table-border-color);
+    }
+
+    .table-footer{
+        padding: var(--table-footer-padding);
+        padding-top: 7px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

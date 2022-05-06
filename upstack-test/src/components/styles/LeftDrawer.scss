@@ -1,0 +1,90 @@
+$screen-md: 1000px;
+
+.left-drawer {
+  position: relative;
+  width: calc(100%);
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  padding-left: 5px;
+  overflow: hidden;
+
+  &:hover{
+    .drawer-header , .drawer-item, .drawer-user{
+      span{
+        opacity: 1;
+      }
+    }
+  }
+
+  span:hover{
+    filter: brightness(1.5);
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    width: 0;
+    margin-left: -15px;
+    width: 0;
+    .drawer-header, .drawer-item, .drawer-user{
+        span{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.drawer-header{
+  margin-left: -5px;
+  margin-right: -5px;
+  padding-bottom: 10px !important;
+  padding-left: 17px !important;
+  width: calc(100% + 15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.144);
+}
+
+.drawer-user{
+  height: calc(var(--drawer-item-height) * 1.3) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.144);
+}
+
+
+.drawer-header, .drawer-item, .drawer-user{
+  display: flex;
+  align-items: center;
+  height: var(--drawer-item-height);
+  //width: 100%;
+  padding: 0 12px;
+  white-space: nowrap;
+  color: var(--drawer-text-color);
+  font-size: 1rem;
+  img{
+    width: var(--logo-size);
+    height: var(--logo-size);
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  span{
+    opacity: 0;
+    transition: visibility 0s, opacity 0.4s ease-in-out;
+  }
+}
+
+.drawer-header{
+  font-size: 1.2rem;
+}
+
+.drawer-item{
+  margin: 10px 0;
+
+  &:hover{
+      backdrop-filter: brightness(1.3);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      span{
+        filter: brightness(1.5);
+      }
+  }
+}

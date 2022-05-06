@@ -1,0 +1,101 @@
+$screen-md: 1000px;
+
+:root {
+  --secondary-color: #343a40;
+  --primary-color: white;
+  --background-color: #f4f6f9;
+  --left-drawer-width: 70px;
+  --left-drawer-full-width: 305px;
+  --navbar-height: 60px;
+  --logo-size: 33px;
+  --drawer-item-height: 51px;
+  --table-border-color: #e5e8eb;
+  --table-hover-color: #e5e8eb98;
+  --table-cell-padding: 14px;
+  --table-padding: 13px 20px;
+  --table-border-radius: 5px;
+  --search-width: 400px;
+  --search-height: 50px;
+  --table-footer-padding: 26px 20px;
+  --page-active-color: #007bff;
+  --drawer-text-color: #b9c7c7;
+  --border-radius: 5px;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.dashboard {
+  position: relative;
+  display: flex;
+  min-width: max-content;
+  //max-width: fit-content;
+  min-height: 100vh;
+  max-height: max-content;
+
+  .wrapper-drawer {
+    position: relative;
+    width: var(--left-drawer-width);
+    background-color: var(--secondary-color);
+    height: inherit;
+    z-index: 20;
+    transition: width 0.4s ease-in-out;
+
+    
+    &:hover{
+      .left-drawer{
+        width: calc(var(--left-drawer-full-width) - var(--left-drawer-width) + 14px);
+      }
+    }
+
+    @media screen and (max-width: $screen-md) {
+      width: 0;
+    }
+    
+  }
+
+  .open-drawer{
+    width: var(--left-drawer-full-width);
+    .drawer-header, .drawer-item, .drawer-user{
+      span{
+        opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: $screen-md) {
+      .left-drawer{
+        width: calc(var(--left-drawer-full-width) - var(--left-drawer-width) + 14px);
+        padding: 10px 20px;
+      }
+    }
+  }
+  
+  .wrapper-main {
+    position: relative;
+    width: 100%;
+    height: inherit;
+  }
+
+}
+
+.overlay{
+  display: none;
+  transition: background 0.4s ease-in-out;
+  z-index: 10;
+  
+  
+  @media screen and (max-width: $screen-md) {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //left: calc(var(--left-drawer-full-width) - var(--left-drawer-width));
+    background-color: rgba(128, 128, 128, 0.281);
+  }
+}
